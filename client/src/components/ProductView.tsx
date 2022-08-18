@@ -26,8 +26,7 @@ const ProductView = () => {
         <h1>{isLoading}</h1>
         <Box>
           {allItemsArr?.map((item) => (
-            // <h1>{item.asin}</h1>
-            <ItemCard item={item} />
+            <ItemCard key={item.asin} item={item} />
           ))}
         </Box>
       </Container>

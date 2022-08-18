@@ -54,7 +54,11 @@ const ItemCard = ({ item }: ItemCardProps) => {
               }}
             >
               {item.categoryTree.map((category) => (
-                <Chip label={category.name} color='primary' />
+                <Chip
+                  key={category.name}
+                  label={category.name}
+                  color='primary'
+                />
               ))}
             </Box>
           </Box>
