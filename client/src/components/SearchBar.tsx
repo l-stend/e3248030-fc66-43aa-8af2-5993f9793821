@@ -1,5 +1,6 @@
 import React from 'react';
-import { useAppSelector } from '../utils/hooks';
+import { useAppSelector, useAppDispatch } from '../utils/hooks';
+import { filterList } from '../features/allItemsSlice';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -7,6 +8,7 @@ import TextField from '@mui/material/TextField';
 
 const SearchBar = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
+  const dispatch = useAppDispatch();
 
   return (
     <AppBar position='sticky'>
@@ -23,7 +25,7 @@ const SearchBar = () => {
             {item.asin}
           </Box>
         )}
-        // onInputChange={(e) => dispatch(filterList(e.target.value))}
+        onInputChange={(e: any) => dispatch(filterList(e.target.value))}
       />
     </AppBar>
   );

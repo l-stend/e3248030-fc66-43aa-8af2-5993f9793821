@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 import { PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 import { Item } from '../utils/itemTypes';
@@ -73,7 +73,14 @@ export const getItemsArr = createAsyncThunk<Item[]>(
 export const allItemsSlice = createSlice({
   name: 'allItems',
   initialState,
-  reducers: {},
+  reducers: {
+    filterList: (state, action: PayloadAction<string>) => {
+      state.allItemsArr = current(state.allItemsBackUp);
+      state.allItemsArr = state.allItemsArr.filter((item) =>
+        item.asin.toLowerCase().includes(action.payload.toLowerCase())
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getItemsArr.pending, (state) => {
       state.isLoading = true;
@@ -81,6 +88,7 @@ export const allItemsSlice = createSlice({
     builder.addCase(getItemsArr.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.allItemsArr = payload;
+      state.allItemsBackUp = payload;
     });
     builder.addCase(getItemsArr.rejected, (state, { payload }) => {
       state.isLoading = false;
@@ -105,5 +113,7 @@ export const selectorAllItemsArr = (state: RootState) =>
   state.allItems.allItemsArr;
 
 export const selectorIsLoading = (state: RootState) => state.allItems.isLoading;
+
+export const { filterList } = allItemsSlice.actions;
 
 export default allItemsSlice.reducer;
