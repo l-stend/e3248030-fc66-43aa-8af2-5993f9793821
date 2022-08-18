@@ -16,12 +16,20 @@ const ItemCard = ({ item }: ItemCardProps) => {
   const [isDescriptionOpen, setIsDescriptionOpen] = useState<boolean>(false);
 
   return (
-    <Paper id='item-card' elevation={7}>
+    <Paper
+      id='item-card'
+      elevation={7}
+      sx={{
+        height: '45vh',
+        width: '85vw',
+        marginTop: '2vh',
+      }}
+    >
       <Box
         id='card-wrapper'
         sx={{
-          height: '30vh',
-          width: '85vw',
+          // height: '30vh',
+          // width: '85vw',
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -35,12 +43,6 @@ const ItemCard = ({ item }: ItemCardProps) => {
           }}
         >
           <Box id='image-wrapper'>
-            {/* <img
-              src='https://raw.githubusercontent.com/l-stend/e3248030-fc66-43aa-8af2-5993f9793821/main/client/public/logo512.png'
-              alt=''
-              height='100%'
-              width='35%'
-            /> */}
             <CardSlideShow imagesCSV={item.imagesCSV} />
           </Box>
           <Box id='info-wrapper'>

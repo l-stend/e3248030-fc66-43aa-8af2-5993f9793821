@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -17,7 +18,6 @@ const CardSlideShow = ({ imagesCSV }: CardSlideShowProps) => {
   }, [imagesCSV]);
 
   const handleForwardClick = () => {
-    console.log(currentIndex);
     picsArr &&
       (currentIndex <= picsArr.length - 1
         ? setCurrentIndex(currentIndex + 1)
@@ -33,10 +33,17 @@ const CardSlideShow = ({ imagesCSV }: CardSlideShowProps) => {
 
   return (
     <Box
+      id='slide-wrapper'
       sx={{
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
+        // width: '70%',
+        // height: '90%',
+        maxHeight: '35vh',
+        maxWidth: '30vw',
+        margin: '1.5em',
+        paddingX: '1em',
       }}
     >
       <IconButton onClick={() => handleBackClick()}>
@@ -47,6 +54,16 @@ const CardSlideShow = ({ imagesCSV }: CardSlideShowProps) => {
           picsArr ? picsArr[currentIndex] : ''
         }`}
         alt='Ooops, image not found'
+        style={{
+          objectFit: 'fill',
+          // height: '100%',
+          // width: '80%',
+          // height: '40vw',
+          // width: '40vw',
+          maxHeight: '35vw',
+          maxWidth: '30vw',
+          borderRadius: '4px',
+        }}
       />
       <IconButton onClick={() => handleForwardClick()}>
         <ArrowForwardIosIcon />

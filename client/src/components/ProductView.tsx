@@ -4,6 +4,7 @@ import { getItemsArr } from '../features/allItemsSlice';
 import ItemCard from './ItemCard';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import CircularProgress from '@mui/material/CircularProgress';
 import Grid from '@mui/material/Grid';
 import { Item } from '../utils/itemTypes';
 import { JsxEmit } from 'typescript';
@@ -21,16 +22,31 @@ const ProductView = () => {
 
   return (
     <Box id='product-view-wrapper'>
-      <Container id='product-list-container'>
-        <h1>{isLoading}</h1>
-        <Box>
-          {allItemsArr?.map((item) => (
-            <ItemCard key={item.asin} item={item} />
-          ))}
+      {isLoading ? (
+        <Box sx={{ display: 'flex' }}>
+          <CircularProgress />
         </Box>
-      </Container>
+      ) : (
+        <Container id='product-list-container'>
+          <Box>
+            {allItemsArr?.map((item) => (
+              <ItemCard key={item.asin} item={item} />
+            ))}
+          </Box>
+        </Container>
+      )}
     </Box>
   );
 };
 
 export default ProductView;
+
+//  <Box id='product-view-wrapper'>
+//       <Container id='product-list-container'>
+//         <Box>
+//           {allItemsArr?.map((item) => (
+//             <ItemCard key={item.asin} item={item} />
+//           ))}
+//         </Box>
+//       </Container>
+//     </Box>
