@@ -23,17 +23,17 @@ const ProductView = () => {
   return (
     <Box id='product-view-wrapper'>
       {isLoading ? (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', margin: '10em' }}>
           <CircularProgress />
         </Box>
       ) : (
-        <Container id='product-list-container'>
+        <Box id='product-list-container'>
           <Box>
             {allItemsArr?.map((item) => (
               <ItemCard key={item.asin} item={item} />
             ))}
           </Box>
-        </Container>
+        </Box>
       )}
     </Box>
   );

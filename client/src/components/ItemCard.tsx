@@ -7,6 +7,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Collapse from '@mui/material/Collapse';
+import Tooltip from '@mui/material/Tooltip';
+import QrCode2Icon from '@mui/icons-material/QrCode2';
+import FactoryIcon from '@mui/icons-material/Factory';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 interface ItemCardProps {
   item: Item;
@@ -21,8 +25,11 @@ const ItemCard = ({ item }: ItemCardProps) => {
       elevation={7}
       sx={{
         height: '45vh',
-        width: '85vw',
+        maxHeight: 'auto',
+        // width: '86vw',
         marginTop: '2vh',
+        marginX: '7vw',
+        padding: '1em',
       }}
     >
       <Box
@@ -32,8 +39,11 @@ const ItemCard = ({ item }: ItemCardProps) => {
           // width: '85vw',
           display: 'flex',
           flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
+        {/* //////// IMAGE AND INFO ///////// */}
         <Box
           id='image-and-info'
           sx={{
@@ -42,39 +52,113 @@ const ItemCard = ({ item }: ItemCardProps) => {
             justifyContent: 'center',
           }}
         >
+          {/* ///// images ////// */}
           <Box id='image-wrapper'>
             <CardSlideShow imagesCSV={item.imagesCSV} />
           </Box>
-          <Box id='info-wrapper'>
-            <Typography>{item.asin}</Typography>
-            <Typography>{item.title}</Typography>
-            <Typography>{item.manufacturer}</Typography>
+          {/* ///// info ////// */}
+          <Box
+            id='info-wrapper'
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              paddingX: '2em',
+              // justifyContent: 'center',
+              // alignItems: 'space-between',
+            }}
+          >
+            {/* asin */}
+            <Tooltip title='ASIN' placement='top-start' arrow>
+              <Box
+                id='info-asin'
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}
+              >
+                <QrCode2Icon
+                  fontSize='medium'
+                  color='primary'
+                  sx={{ paddingRight: '.7em' }}
+                />
+                <Typography variant='h6' sx={{ marginY: '1.2em' }}>
+                  {item.asin}
+                </Typography>
+              </Box>
+            </Tooltip>
+            {/* product name */}
+            <Tooltip title='Product name' placement='top-start' arrow>
+              <Box
+                id='info-asin'
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}
+              >
+                <ShoppingBagIcon
+                  fontSize='medium'
+                  color='primary'
+                  sx={{ paddingRight: '.7em' }}
+                />
+                <Typography variant='subtitle2' sx={{ marginY: '1.2em' }}>
+                  {item.title}
+                </Typography>
+              </Box>
+            </Tooltip>
+            {/* manufacturer */}
+            <Tooltip title='Manufacturer' placement='top-start' arrow>
+              <Box
+                id='info-asin'
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}
+              >
+                <FactoryIcon
+                  fontSize='medium'
+                  color='primary'
+                  sx={{ paddingRight: '.7em' }}
+                />
+                <Typography variant='subtitle1' sx={{ marginY: '1.2em' }}>
+                  {item.manufacturer}
+                </Typography>
+              </Box>
+            </Tooltip>
+            {/* categories */}
             <Box
               id='info-categories'
               sx={{
                 display: 'flex',
                 flexDirection: 'row',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
+                marginY: '1.5em',
               }}
             >
               {item.categoryTree.map((category) => (
-                <Chip
-                  key={category.name}
-                  label={category.name}
-                  color='primary'
-                />
+                <Tooltip title='Category' placement='top-start' arrow>
+                  <Chip
+                    key={category.name}
+                    label={category.name}
+                    color='primary'
+                  />
+                </Tooltip>
               ))}
             </Box>
           </Box>
         </Box>
-        <Box id='show-more-button-wrapper'>
-          {!isDescriptionOpen && (
-            <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
-              Show Description
-            </Button>
-          )}
-        </Box>
       </Box>
+      {/* //////// SHOW MORE BUTTON ///////// */}
+      <Box id='show-more-button-wrapper'>
+        {!isDescriptionOpen && (
+          <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
+            Show Description
+          </Button>
+        )}
+      </Box>
+      {/* //////// DESCRIPTION ///////// */}
       <Box id='collapse-wrapper'>
         {isDescriptionOpen && (
           <Collapse
