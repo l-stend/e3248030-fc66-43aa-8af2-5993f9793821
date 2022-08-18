@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { useAppDispatch } from './utils/hooks';
 import { getItemsArr } from './features/allItemsSlice';
-import { ProductView } from './components';
+import { ProductView, SearchBar } from './components';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -23,7 +23,8 @@ function App() {
 
   return (
     <div className='App'>
-      <button onClick={() => dispatch(getItemsArr())}>api call</button>
+      {/* <button onClick={() => dispatch(getItemsArr())}>api call</button> */}
+      <SearchBar />
       <ProductView />
     </div>
   );

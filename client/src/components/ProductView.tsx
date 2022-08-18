@@ -23,7 +23,6 @@ const ProductView = () => {
   return (
     <Box id='product-view-wrapper'>
       <Container id='product-list-container'>
-        <h1>asd</h1>
         <h1>{isLoading}</h1>
         <Box>
           {allItemsArr?.map((item) => (
