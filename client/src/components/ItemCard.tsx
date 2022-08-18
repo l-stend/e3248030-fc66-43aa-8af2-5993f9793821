@@ -11,6 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import QrCode2Icon from '@mui/icons-material/QrCode2';
 import FactoryIcon from '@mui/icons-material/Factory';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import Divider from '@mui/material/Divider';
 
 interface ItemCardProps {
   item: Item;
@@ -24,8 +25,8 @@ const ItemCard = ({ item }: ItemCardProps) => {
       id='item-card'
       elevation={7}
       sx={{
-        height: '45vh',
-        maxHeight: 'auto',
+        // height: '45vh',
+        // maxHeight: '90vh',
         // width: '86vw',
         marginTop: '2vh',
         marginX: '7vw',
@@ -127,6 +128,7 @@ const ItemCard = ({ item }: ItemCardProps) => {
                 </Typography>
               </Box>
             </Tooltip>
+            <Divider />
             {/* categories */}
             <Box
               id='info-categories'
@@ -149,30 +151,58 @@ const ItemCard = ({ item }: ItemCardProps) => {
             </Box>
           </Box>
         </Box>
-      </Box>
-      {/* //////// SHOW MORE BUTTON ///////// */}
-      <Box id='show-more-button-wrapper'>
-        {!isDescriptionOpen && (
-          <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
-            Show Description
-          </Button>
-        )}
-      </Box>
-      {/* //////// DESCRIPTION ///////// */}
-      <Box id='collapse-wrapper'>
-        {isDescriptionOpen && (
-          <Collapse
-            id='description-and-show-less-button'
-            in={isDescriptionOpen}
-            timeout='auto'
-            unmountOnExit
-          >
-            <Typography>{item.description}</Typography>
-            <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
-              Hide Description
-            </Button>
-          </Collapse>
-        )}
+
+        {/* //////// DESCRIPTION ///////// */}
+        {/* show more button */}
+        <Box
+          id='collapse-wrapper'
+          // sx={{
+          //   display: 'flex',
+          //   flexDirection: 'column',
+          //   justifyContent: 'center',
+          //   alignItems: 'center',
+          // }}
+        >
+          <Box id='show-description-button-wrapper'>
+            {!isDescriptionOpen && (
+              <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
+                Show Description
+              </Button>
+            )}
+          </Box>
+          {/* collapse */}
+          {isDescriptionOpen && (
+            <Collapse
+              id='description-and-show-less-button'
+              in={isDescriptionOpen}
+              timeout='auto'
+              unmountOnExit
+            >
+              <Typography
+                variant='body1'
+                sx={{ paddingX: '2.5em', paddingY: '.5em' }}
+              >
+                {item.description}
+              </Typography>
+              <Divider sx={{ marginTop: '.5em' }} />
+              <Box
+                id='hide-description-button-wrapper'
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  marginTop: '1em',
+                }}
+              >
+                <Button
+                  onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
+                >
+                  Hide Description
+                </Button>
+              </Box>
+            </Collapse>
+          )}
+        </Box>
       </Box>
     </Paper>
   );

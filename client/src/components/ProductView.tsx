@@ -23,7 +23,7 @@ const ProductView = () => {
   return (
     <Box id='product-view-wrapper'>
       {isLoading ? (
-        <Box sx={{ display: 'flex', alignItems: 'center', margin: '10em' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', marginX: '50vw' }}>
           <CircularProgress />
         </Box>
       ) : (
