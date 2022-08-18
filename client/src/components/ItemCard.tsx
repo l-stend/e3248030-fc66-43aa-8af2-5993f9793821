@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Item } from '../utils/itemTypes';
+import CardSlideShow from './CardSlideShow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -34,12 +35,13 @@ const ItemCard = ({ item }: ItemCardProps) => {
           }}
         >
           <Box id='image-wrapper'>
-            <img
+            {/* <img
               src='https://raw.githubusercontent.com/l-stend/e3248030-fc66-43aa-8af2-5993f9793821/main/client/public/logo512.png'
               alt=''
               height='100%'
               width='35%'
-            />
+            /> */}
+            <CardSlideShow imagesCSV={item.imagesCSV} />
           </Box>
           <Box id='info-wrapper'>
             <Typography>{item.asin}</Typography>

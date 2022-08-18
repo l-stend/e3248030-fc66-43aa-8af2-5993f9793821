@@ -12,7 +12,6 @@ const ProductView = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
   const isLoading = useAppSelector((state) => state.allItems.isLoading);
   const dispatch = useAppDispatch();
-  // console.log({ allItemsArr, isLoading });
 
   useEffect(() => {
     (async () => {

@@ -5,7 +5,7 @@ export type CategoryTreeObject = {
 
 export interface Item {
   categories: number[];
-  imageCSV: string;
+  imagesCSV: string;
   manufacturer: string;
   title: string;
   asin: string;
