@@ -1,11 +1,14 @@
 import React, { ReactNode, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../utils/hooks';
 import { getItemsArr } from '../features/allItemsSlice';
+import ItemCard from './ItemCard';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import { Item } from '../utils/itemTypes';
+import { JsxEmit } from 'typescript';
 
-const ProductView: React.FunctionComponent = () => {
+const ProductView = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
   const isLoading = useAppSelector((state) => state.allItems.isLoading);
   const dispatch = useAppDispatch();
@@ -22,11 +25,12 @@ const ProductView: React.FunctionComponent = () => {
       <Container id='product-list-container'>
         <h1>asd</h1>
         <h1>{isLoading}</h1>
-        <div>
+        <Box>
           {allItemsArr?.map((item) => (
-            <h1>{item.manufacturer}</h1>
+            // <h1>{item.asin}</h1>
+            <ItemCard item={item} />
           ))}
-        </div>
+        </Box>
       </Container>
     </Box>
   );

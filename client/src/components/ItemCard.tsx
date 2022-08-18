@@ -4,14 +4,19 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Chip from '@mui/material/Chip';
 
-const ItemCard: React.FunctionComponent<Item> = (props) => {
+interface ItemCardProps {
+  item: Item;
+}
+
+const ItemCard = ({ item }: ItemCardProps) => {
   return (
-    <Paper id='item-card'>
+    <Paper id='item-card' elevation={7}>
       <Box
         id='card-wrapper'
         sx={{
-          heigth: '30vh',
+          height: '30vh',
           width: '85vw',
           display: 'flex',
           flexDirection: 'column',
@@ -29,14 +34,26 @@ const ItemCard: React.FunctionComponent<Item> = (props) => {
             <img
               src='https://raw.githubusercontent.com/l-stend/e3248030-fc66-43aa-8af2-5993f9793821/main/client/public/logo512.png'
               alt=''
-              height='25vh'
-              width='25vw'
+              height='100%'
+              width='35%'
             />
           </Box>
           <Box id='info-wrapper'>
-            <Typography>{props.asin}</Typography>
-            <Typography>{props.title}</Typography>
-            <Typography>{props.manufacturer}</Typography>
+            <Typography>{item.asin}</Typography>
+            <Typography>{item.title}</Typography>
+            <Typography>{item.manufacturer}</Typography>
+            <Box
+              id='info-categories'
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+              }}
+            >
+              {item.categoryTree.map((category) => (
+                <Chip label={category.name} color='primary' />
+              ))}
+            </Box>
           </Box>
         </Box>
         <Box id='show-more-button-wrapper'>
