@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Item } from '../utils/itemTypes';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
+import Collapse from '@mui/material/Collapse';
 
 interface ItemCardProps {
   item: Item;
 }
 
 const ItemCard = ({ item }: ItemCardProps) => {
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState<boolean>(false);
+
   return (
     <Paper id='item-card' elevation={7}>
       <Box
@@ -57,8 +60,27 @@ const ItemCard = ({ item }: ItemCardProps) => {
           </Box>
         </Box>
         <Box id='show-more-button-wrapper'>
-          <Button>Show More</Button>
+          {!isDescriptionOpen && (
+            <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
+              Show Description
+            </Button>
+          )}
         </Box>
+      </Box>
+      <Box id='collapse-wrapper'>
+        {isDescriptionOpen && (
+          <Collapse
+            id='description-and-show-less-button'
+            in={isDescriptionOpen}
+            timeout='auto'
+            unmountOnExit
+          >
+            <Typography>{item.description}</Typography>
+            <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
+              Hide Description
+            </Button>
+          </Collapse>
+        )}
       </Box>
     </Paper>
   );
