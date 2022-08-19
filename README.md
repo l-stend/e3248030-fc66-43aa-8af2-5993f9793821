@@ -17,7 +17,7 @@ Here is a somewhat different version of the task. :) In this version the utetnte
 
 Here's a little preview
 
-    <img src="/home/l-stend/take-home/pbRecommerce/e3248030-fc66-43aa-8af2-5993f9793821/client/src/assets/screencapture-localhost-3000-2022-08-19-09_07_58.png" alt="Preview" width="1300" height="500">
+    <img src="https://github.com/l-stend/e3248030-fc66-43aa-8af2-5993f9793821/blob/main/client/src/assets/screencapture-localhost-3000-2022-08-19-09_07_58.png" width="800" height="550">
 
 ## Run locally
 
@@ -36,9 +36,13 @@ In order to run the app via the API call, you need to
 - open a browser window without the CORS policy restrictions.
 
   -To do this with Chrome in a Windows environment run the command:
+
   ` chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`
+
   -While on Mac:
+
   `-open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
+
   ...I never tried this though :)
 
 To use the app in local mode, meaning taking data from the .json file, just open the browser normally and leave the `<LocalProductView/>` component uncommented in the `App.tsx` file
