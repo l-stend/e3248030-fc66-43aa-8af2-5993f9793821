@@ -3,8 +3,6 @@ import { PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 import { Item } from '../utils/itemTypes';
 import customFetch from '../utils/axios';
-import { AxiosResponse } from 'axios';
-import axios from 'axios';
 
 interface AllItemsState {
   allItemsArr: Item[] | [];
