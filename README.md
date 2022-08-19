@@ -4,7 +4,7 @@ Implemented by [Luca Stendardo](https://www.linkedin.com/in/luca-stendardo/?loca
 
 ## Description
 
-Here is a somewhat different version of the task. :) In this version the utetnte can browse a list of products using a dynamic search bar. The list of products can be retrieved either from a .json file locally in the repo or via an API call. The latter, however, being restricted by CORS policies can only be used in a browser window with those policies disabled. I made this choice because in the context of an exercise it allowed me to better show how I would set up the app to work in a real, protected environment.
+Here is a somewhat different version of the task. In this version the user can browse a list of products using a dynamic search bar. The list of products can be retrieved either from a .json file locally in the repo or via an API call. The latter, however, being restricted by CORS policies can only be used in a browser window with those policies disabled. I made this choice because in the context of an exercise it allowed me to better show how I would set up the app to work in a real, protected environment.
 
 ## Tech Stack
 
@@ -48,7 +48,7 @@ In order to run the app via the API call, you need to
 
   `-open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
 
-  ...I never tried this though :)
+  ...I never tried with a Mac though :)
 
 To use the app in local mode, meaning taking data from the .json file, just open the browser normally and leave the `<LocalProductView/>` component uncommented in the `App.tsx` file
 
