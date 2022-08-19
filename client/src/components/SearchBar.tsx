@@ -27,7 +27,6 @@ const SearchBar = () => {
           alt='pb-logo'
           height='50px'
           width='50px'
-          border-radius='10px'
         />
         <Autocomplete
           id='navbar-search-bar'

@@ -38,8 +38,6 @@ const CardSlideShow = ({ imagesCSV }: CardSlideShowProps) => {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        // width: '70%',
-        // height: '90%',
         maxHeight: '35vh',
         maxWidth: '30vw',
         margin: '1.5em',
@@ -56,10 +54,6 @@ const CardSlideShow = ({ imagesCSV }: CardSlideShowProps) => {
         alt='Ooops, image not found'
         style={{
           objectFit: 'fill',
-          // height: '100%',
-          // width: '80%',
-          // height: '40vw',
-          // width: '40vw',
           maxHeight: '35vw',
           maxWidth: '30vw',
           borderRadius: '4px',

@@ -25,9 +25,6 @@ const ItemCard = ({ item }: ItemCardProps) => {
       id='item-card'
       elevation={12}
       sx={{
-        // height: '45vh',
-        // maxHeight: '90vh',
-        // width: '86vw',
         marginTop: '2vh',
         marginX: '7vw',
         padding: '1em',
@@ -36,8 +33,6 @@ const ItemCard = ({ item }: ItemCardProps) => {
       <Box
         id='card-wrapper'
         sx={{
-          // height: '30vh',
-          // width: '85vw',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -64,8 +59,6 @@ const ItemCard = ({ item }: ItemCardProps) => {
               display: 'flex',
               flexDirection: 'column',
               paddingX: '2em',
-              // justifyContent: 'center',
-              // alignItems: 'space-between',
             }}
           >
             {/* asin */}
@@ -155,15 +148,7 @@ const ItemCard = ({ item }: ItemCardProps) => {
 
         {/* //////// DESCRIPTION ///////// */}
         {/* show more button */}
-        <Box
-          id='collapse-wrapper'
-          // sx={{
-          //   display: 'flex',
-          //   flexDirection: 'column',
-          //   justifyContent: 'center',
-          //   alignItems: 'center',
-          // }}
-        >
+        <Box id='collapse-wrapper'>
           <Box id='show-description-button-wrapper'>
             {!isDescriptionOpen && (
               <Button onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
