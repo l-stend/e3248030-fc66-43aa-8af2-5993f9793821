@@ -23,7 +23,7 @@ const ItemCard = ({ item }: ItemCardProps) => {
   return (
     <Paper
       id='item-card'
-      elevation={7}
+      elevation={12}
       sx={{
         // height: '45vh',
         // maxHeight: '90vh',
