@@ -21,7 +21,7 @@ export interface Item {
   binding: string;
   eanList: string[];
   upcList: boolean;
-  frequentBoughtTogether: string[];
+  frequentlyBoughtTogether?: string[];
   features: string[];
   description: string;
   itemHeight: number;

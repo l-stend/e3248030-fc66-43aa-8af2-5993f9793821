@@ -140,12 +140,13 @@ const ItemCard = ({ item }: ItemCardProps) => {
               }}
             >
               {item.categoryTree.map((category) => (
-                <Tooltip title='Category' placement='top-start' arrow>
-                  <Chip
-                    key={category.name}
-                    label={category.name}
-                    color='primary'
-                  />
+                <Tooltip
+                  key={category.name}
+                  title='Category'
+                  placement='top-start'
+                  arrow
+                >
+                  <Chip label={category.name} color='primary' />
                 </Tooltip>
               ))}
             </Box>
@@ -174,8 +175,10 @@ const ItemCard = ({ item }: ItemCardProps) => {
           {isDescriptionOpen && (
             <Collapse
               id='description-and-show-less-button'
-              in={isDescriptionOpen}
-              timeout='auto'
+              easing='ease-in'
+              in={true}
+              orientation='vertical'
+              timeout={2000}
               unmountOnExit
             >
               <Typography

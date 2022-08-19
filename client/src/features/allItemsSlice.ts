@@ -80,6 +80,11 @@ export const allItemsSlice = createSlice({
         item.asin.toLowerCase().includes(action.payload.toLowerCase())
       );
     },
+    //It sets the state for the local version
+    setLocalList: (state, action: PayloadAction<Item[]>) => {
+      state.allItemsArr = action.payload;
+      state.allItemsBackUp = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getItemsArr.pending, (state) => {
@@ -114,6 +119,6 @@ export const selectorAllItemsArr = (state: RootState) =>
 
 export const selectorIsLoading = (state: RootState) => state.allItems.isLoading;
 
-export const { filterList } = allItemsSlice.actions;
+export const { filterList, setLocalList } = allItemsSlice.actions;
 
 export default allItemsSlice.reducer;

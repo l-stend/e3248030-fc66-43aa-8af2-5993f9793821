@@ -5,6 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
+import PageviewIcon from '@mui/icons-material/Pageview';
 
 const SearchBar = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
@@ -14,7 +15,12 @@ const SearchBar = () => {
     <AppBar position='sticky'>
       <Autocomplete
         id='navbar-search-bar'
-        sx={{ width: '40vw' }}
+        sx={{
+          width: '40vw',
+          marginY: '.5em',
+          marginLeft: '3em',
+          color: 'white',
+        }}
         renderInput={(params) => (
           <TextField {...params} label='Search for ASIN' />
         )}
@@ -26,6 +32,7 @@ const SearchBar = () => {
           </Box>
         )}
         onInputChange={(e: any) => dispatch(filterList(e.target.value))}
+        noOptionsText='No ASIN matches your search'
       />
     </AppBar>
   );

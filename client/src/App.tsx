@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { useAppDispatch } from './utils/hooks';
 import { getItemsArr } from './features/allItemsSlice';
-import { ProductView, SearchBar } from './components';
+import { ProductView, SearchBar, LocalProductView } from './components';
 import Box from '@mui/material/Box';
 
 function App() {
@@ -24,9 +24,11 @@ function App() {
 
   return (
     <Box id='app-wrapper'>
-      {/* <button onClick={() => dispatch(getItemsArr())}>api call</button> */}
       <SearchBar />
-      <ProductView />
+      {/* Keep uncommented to display the data from the API call. It can only opening the browser without CORS restrictions */}
+      {/* <ProductView /> */}
+      {/* Keep uncommented to to display data from the local .json file */}
+      <LocalProductView />
     </Box>
   );
 }

@@ -1,4 +1,5 @@
 import ProductView from './ProductView';
 import SearchBar from './SearchBar';
+import LocalProductView from './LocalProductView';
 
-export { ProductView, SearchBar };
+export { ProductView, SearchBar, LocalProductView };
