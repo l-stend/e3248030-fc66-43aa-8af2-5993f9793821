@@ -17,7 +17,7 @@ Here is a somewhat different version of the task. :) In this version the utetnte
 
 Here's a little preview
 
-    <img src="https://image-cache.xingcdn.com/images/attachments/263/737/595/original/c23f2bc8_fbec_48a0_a2a8_472253857803.jpg?Expires=1660912226&Signature=P8zsIsjBlFixCWpb8arRbLZbXj9JtAx6sORCuA4O1BlU2rGjdpaR369Uz3rsUYKP6sHErhUWjlQLoGIHPnGyVKnZDopUcUVXgvKp27wyv5x4GNHdUl2RrzbFXkJp0-11M8p07-gQjpnDZ9dVwxxIil3Qfy1qe~M1TbS3W6rR4DBY2TJA54kOCD1vnq4Wje2N1Kr4MnexommNlpYy0urNWqJBGwn9JPjMw7w6s26pSvRu98uuT66Zb2zcEFEIeGnhmFdL3P1A~0IgNorZZACkMOiM0h6~spflCsT0D4Y2s38~nm9p1772ESPr1fWpspb0D785Tee4Iae5gXg4FP7V0Q__&Key-Pair-Id=APKAJ7DHXHPGL3QFZP4Q" alt="Logo" width="1300" height="500">
+    <img src="/home/l-stend/take-home/pbRecommerce/e3248030-fc66-43aa-8af2-5993f9793821/client/src/assets/screencapture-localhost-3000-2022-08-19-09_07_58.png" alt="Preview" width="1300" height="500">
 
 ## Run locally
 
@@ -31,15 +31,19 @@ npm install
 
 In order to run the app via the API call, you need to
 
-- go to the `bash App.tsx ` file
-- uncomment the <ProductView/> component.
+- go to the `App.tsx ` file
+- uncomment the `<ProductView/>` component.
 - open a browser window without the CORS policy restrictions.
-  -To do this with Chrome in a Windows environment run the command:
-  chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
-  -While on Mac:
-  -open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
 
-To use the app in local mode, meaning taking data from the .json file, just open the browser normally and leave the <LocalProductView/> component uncommented in the App.tsx file
+  -To do this with Chrome in a Windows environment run the command:
+  ` chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`
+  -While on Mac:
+  `-open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
+  ...I never tried this though :)
+
+To use the app in local mode, meaning taking data from the .json file, just open the browser normally and leave the `<LocalProductView/>` component uncommented in the `App.tsx` file
+
+Then just open the `client` folder and run;
 
 ```bash
 npm start
