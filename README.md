@@ -20,7 +20,7 @@ Here's a little preview
 <div 
 display="flex"
 flex-direction="row">
-    <img src="./client/src/assets/preview.png" alt="Logo" width="800" height="480">
+    <img src="./client/src/assets/preview.png" alt="Logo" width="680" height="500">
 
 </div>
 
