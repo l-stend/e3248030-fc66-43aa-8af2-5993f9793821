@@ -17,7 +17,12 @@ Here is a somewhat different version of the task. :) In this version the utetnte
 
 Here's a little preview
 
-    <img src="https://github.com/l-stend/e3248030-fc66-43aa-8af2-5993f9793821/blob/main/client/src/assets/screencapture-localhost-3000-2022-08-19-09_07_58.png" width="800" height="550">
+<div 
+display="flex"
+flex-direction="row">
+    <img src="./client/src/assets/preview.png" alt="Logo" width="800" height="550">
+
+</div>
 
 ## Run locally
 
