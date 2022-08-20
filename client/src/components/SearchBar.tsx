@@ -23,7 +23,7 @@ const SearchBar = () => {
         }}
       >
         <img
-          src='https://image-cache.xingcdn.com/images/attachments/263/737/595/original/c23f2bc8_fbec_48a0_a2a8_472253857803.jpg?Expires=1660912226&Signature=P8zsIsjBlFixCWpb8arRbLZbXj9JtAx6sORCuA4O1BlU2rGjdpaR369Uz3rsUYKP6sHErhUWjlQLoGIHPnGyVKnZDopUcUVXgvKp27wyv5x4GNHdUl2RrzbFXkJp0-11M8p07-gQjpnDZ9dVwxxIil3Qfy1qe~M1TbS3W6rR4DBY2TJA54kOCD1vnq4Wje2N1Kr4MnexommNlpYy0urNWqJBGwn9JPjMw7w6s26pSvRu98uuT66Zb2zcEFEIeGnhmFdL3P1A~0IgNorZZACkMOiM0h6~spflCsT0D4Y2s38~nm9p1772ESPr1fWpspb0D785Tee4Iae5gXg4FP7V0Q__&Key-Pair-Id=APKAJ7DHXHPGL3QFZP4Q'
+          src='https://raw.githubusercontent.com/l-stend/e3248030-fc66-43aa-8af2-5993f9793821/main/client/src/assets/c23f2bc8_fbec_48a0_a2a8_472253857803.jpg'
           alt='pb-logo'
           height='50px'
           width='50px'
