@@ -5,7 +5,7 @@ import ItemCard from './ItemCard';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 
-const ProductView = () => {
+const ProductView: React.FC = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
   const isLoading = useAppSelector((state) => state.allItems.isLoading);
   const dispatch = useAppDispatch();

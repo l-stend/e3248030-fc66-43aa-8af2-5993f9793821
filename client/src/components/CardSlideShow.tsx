@@ -8,7 +8,7 @@ interface CardSlideShowProps {
   imagesCSV: string;
 }
 
-const CardSlideShow = ({ imagesCSV }: CardSlideShowProps) => {
+const CardSlideShow: React.FC<CardSlideShowProps> = ({ imagesCSV }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [picsArr, setPicsArr] = useState<string[] | null>(null);
 

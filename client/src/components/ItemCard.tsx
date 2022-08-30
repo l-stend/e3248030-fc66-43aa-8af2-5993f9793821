@@ -17,7 +17,7 @@ interface ItemCardProps {
   item: Item;
 }
 
-const ItemCard = ({ item }: ItemCardProps) => {
+const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
   const [isDescriptionOpen, setIsDescriptionOpen] = useState<boolean>(false);
 
   return (

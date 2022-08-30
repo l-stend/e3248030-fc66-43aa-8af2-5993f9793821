@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-const SearchBar = () => {
+const SearchBar: React.FC = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
   const dispatch = useAppDispatch();
 

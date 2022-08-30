@@ -5,7 +5,7 @@ import ItemCard from './ItemCard';
 import Box from '@mui/material/Box';
 import productsList from '../utils/products.json';
 
-const LocalProductView = () => {
+const LocalProductView: React.FC = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
   const dispatch = useAppDispatch();
   const localItemsList: any = productsList;
