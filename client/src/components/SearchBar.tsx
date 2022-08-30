@@ -57,5 +57,3 @@ const SearchBar: React.FC = () => {
 };
 
 export default SearchBar;
-
-// dispatch(filterList(searchValue))
