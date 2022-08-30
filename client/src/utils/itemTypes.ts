@@ -17,10 +17,10 @@ export interface Item {
   packageWidth: number;
   packageQuantity: number;
   isAdultProduct: boolean;
-  author: string;
+  author: string | null;
   binding: string;
   eanList: string[];
-  upcList: boolean;
+  upcList: string[] | null;
   frequentlyBoughtTogether?: string[];
   features: string[];
   description: string;

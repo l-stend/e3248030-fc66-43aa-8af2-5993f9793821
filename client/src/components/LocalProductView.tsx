@@ -4,11 +4,12 @@ import { setLocalList } from '../features/allItemsSlice';
 import ItemCard from './ItemCard';
 import Box from '@mui/material/Box';
 import productsList from '../utils/products.json';
+import { Item, CategoryTreeObject } from '../utils/itemTypes';
 
 const LocalProductView: React.FC = () => {
   const allItemsArr = useAppSelector((state) => state.allItems.allItemsArr);
   const dispatch = useAppDispatch();
-  const localItemsList: any = productsList;
+  const localItemsList: Item[] = productsList;
 
   useEffect(() => {
     dispatch(setLocalList(localItemsList));
