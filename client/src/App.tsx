@@ -16,9 +16,9 @@ function App() {
       >
         <SearchBar />
         {/* Keep uncommented to display the data from the API call. It can only opening the browser without CORS restrictions */}
-        <ProductView />
+        {/* <ProductView /> */}
         {/* Keep uncommented to to display data from the local .json file */}
-        {/* <LocalProductView /> */}
+        <LocalProductView />
       </Box>
     </ThemeProvider>
   );

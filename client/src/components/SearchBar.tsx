@@ -46,7 +46,9 @@ const SearchBar: React.FC = () => {
               {item.asin}
             </Box>
           )}
-          onInputChange={(e: any) => dispatch(filterList(e.target.value))}
+          onInputChange={(_, searchValue: string) =>
+            dispatch(filterList(searchValue))
+          }
           noOptionsText='No ASIN matches your search'
         />
       </Box>
@@ -55,3 +57,5 @@ const SearchBar: React.FC = () => {
 };
 
 export default SearchBar;
+
+// dispatch(filterList(searchValue))
