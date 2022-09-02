@@ -21,7 +21,6 @@ export const getItemsArr = createAsyncThunk<Item[]>(
   async (_, thunkAPI) => {
     try {
       const res = await customFetch.get<Item[]>('');
-      console.log(res.data);
       return res.data;
     } catch (error: any) {
       console.log(error);
@@ -50,11 +49,14 @@ export const allItemsSlice = createSlice({
     builder.addCase(getItemsArr.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(getItemsArr.fulfilled, (state, { payload }) => {
-      state.isLoading = false;
-      state.allItemsArr = payload;
-      state.allItemsBackUp = payload;
-    });
+    builder.addCase(
+      getItemsArr.fulfilled,
+      (state, action: PayloadAction<Item[]>) => {
+        state.isLoading = false;
+        state.allItemsArr = action.payload;
+        state.allItemsBackUp = action.payload;
+      }
+    );
     builder.addCase(getItemsArr.rejected, (state, { payload }) => {
       state.isLoading = false;
       console.log({ payload });
